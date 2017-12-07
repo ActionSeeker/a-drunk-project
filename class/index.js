@@ -1,0 +1,1 @@
+exports.ClassMaker = require('./classmaker');
