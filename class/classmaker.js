@@ -22,15 +22,15 @@ class ClassMaker{
     }
 
     makeSetter(_var){
-        _var = this.normalize(_var);
-        return `set${_var}(_${_var}){
+        var _upVar = this.normalize(_var);
+        return `set${_upVar}(_${_var}){
             this.${_var}=_${_var};
         }`;
     }
 
     makeGetter(_var){
-        _var = this.normalize(_var);        
-        return `get${_var}(){
+        var _upVar = this.normalize(_var);        
+        return `get${_upVar}(){
             return this.${_var};
         }`;
     }
