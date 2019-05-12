@@ -9,7 +9,7 @@ export class Queue {
             const enqueued: Klassische | undefined = this._queue.shift();
             if (enqueued) {
                 // For the sake of the TypeScript
-                let parsed: any = enqueued.jsonClass;
+                let parsed: any = enqueued.getParsedEntity();
                 Object.keys(parsed).forEach((key: string) => {
                     if (parsed.hasOwnProperty(key) && this.isNotNull(parsed[key])) {
                         const value = parsed[key];
