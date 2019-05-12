@@ -15,7 +15,6 @@ describe('Klassiche parsing tests', () => {
         };
         classic = new Klassische(JSON.stringify(jsonWithSimpleTypes)).parse();
         const propMap = classic.getPropMap();
-        console.log(propMap);
         // Check for the size
         expect(propMap.size).to.equal(4);
         // Check for elements of the map
