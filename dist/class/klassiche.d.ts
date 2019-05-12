@@ -4,7 +4,14 @@ export declare class Klassische {
     private _jsonClass;
     private _originalBuffer;
     private _map;
+    private _parent;
     private _children;
-    constructor(contents: Buffer | string);
-    parse(): Map<string, string | Klassische>;
+    private _queue;
+    constructor(contents: Buffer | string, parent: Klassische | undefined);
+    parse(): Map<string, string>;
+    private isQueueEmpty;
+    readonly children: Klassische[];
+    readonly queue: object[];
+    readonly map: Map<string, string>;
+    readonly jsonClass: any;
 }
