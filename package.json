@@ -2,10 +2,13 @@
   "name": "klassiche",
   "version": "1.0.0",
   "description": "A tool to convert JSON object into ES6 classes. These ES6 classes pretty much follow the getter / setter convention of other programming languages",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "mocha --reporter spec test/**/*.test.js",
+    "dev": "npm run build && npm run test",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/**/*.test.js -- -R spec"
   },
   "repository": {
     "type": "git",
@@ -29,5 +32,12 @@
     "js-beautify": "^1.7.4",
     "nodemon": "^1.12.5",
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.3",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.1.4",
+    "typescript": "^3.4.5"
   }
 }
