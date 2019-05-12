@@ -8,10 +8,11 @@ export declare class Klassische {
     private _children;
     private _queue;
     constructor(contents: Buffer | string, parent: Klassische | undefined);
-    parse(): Map<string, string>;
-    private isQueueEmpty;
-    readonly children: Klassische[];
-    readonly queue: object[];
-    readonly map: Map<string, string>;
+    parse(): Klassische;
     readonly jsonClass: any;
+    addChild(child: Klassische): void;
+    addToPropMap(key: string, value: string): Map<string, string>;
+    getAllChildren(): Klassische[];
+    getChildAtIndex(idx: number): Klassische;
+    getPropMap(): Map<string, string>;
 }
