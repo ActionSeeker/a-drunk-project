@@ -67,4 +67,42 @@ describe('Klassiche parsing tests', () => {
         expect(firstChildPropMap.get('distance')).to.equals(TYPES.NUMBER);
         expect(firstChildPropMap.get('unit')).to.equals(TYPES.STRING);
     });
+
+    it('Should parse the two levels nested JSON correct', () => {
+        const jsonWithSimpleTypes = {
+            "details": {
+                "address": {
+                    "bldgName": "GreyFriars Court",
+                    "subArea": "Kingston",
+                    "city": "Milton Keynes",
+                    "county": "Bukcinghamshire",
+                    "postCode": "MK10 0BN"
+                }
+            }
+        };
+
+        classic = new Klassische(JSON.stringify(jsonWithSimpleTypes)).parse();
+        const propMap = classic.getPropMap();
+        // Assert for size
+        expect(propMap.size).to.equal(1);
+        // Basic value assertion
+        expect(propMap.get("details")).to.equals(TYPES.CLASSIC);
+        // Assert for children count
+        expect(classic.getAllChildren().length).to.equals(1);
+        const firstChild = classic.getChildAtIndex(0);
+        const firstChildPropMap = firstChild.getPropMap();
+        expect(firstChildPropMap.size).to.equals(1);
+        expect(firstChildPropMap.get('address')).to.equals(TYPES.CLASSIC);
+
+        const firstGrandChild = firstChild.getChildAtIndex(0);
+        expect(firstGrandChild.getPropMap().size).to.equals(5);
+        const iterator = firstGrandChild.getPropMap().keys();
+
+        // Assertions using iterator
+        expect(iterator.next().value).to.equal('bldgName');
+        expect(iterator.next().value).to.equal('subArea');
+        expect(iterator.next().value).to.equal('city');
+        expect(iterator.next().value).to.equal('county');
+        expect(iterator.next().value).to.equal('postCode');
+    });
 });
