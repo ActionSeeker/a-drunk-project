@@ -1,12 +1,14 @@
 export declare class Determiner {
     /**
-     * PRIVATE READONLY CONSTANTS
+     * PUBLIC STATIC READONLY CONSTANTS
      * PURE - if the breed of the list is pure, i.e. the list contains homogenous elements
      * MIXED - if the breed of the list if mixed, i.e. the list contains heterogenous elements
      * NULL - if the list is nothing but full of nulls
      */
-    private readonly PURE;
-    private readonly MIXED;
-    private readonly NULL;
+    static readonly PURE: string;
+    static readonly MIXED: string;
+    static readonly NULL: string;
+    private _types;
     getBreed(list: any[]): string;
+    getBreedType(): String;
 }

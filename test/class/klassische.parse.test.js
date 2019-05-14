@@ -37,14 +37,7 @@ describe('Klassiche parsing tests', () => {
             "details": {
                 "manufacturer": "VW Milton Keynes", // String
                 "distance": 0.8,
-                "unit": "miles",
-                // "address": {
-                //     "bldgName": "GreyFriars Court",
-                //     "subArea": "Kingston",
-                //     "city": "Milton Keynes",
-                //     "county": "Bukcinghamshire",
-                //     "postCode": "MK10 0BN"
-                // }
+                "unit": "miles"
             }
         };
 

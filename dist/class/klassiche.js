@@ -73,6 +73,8 @@ var Klassische = /** @class */ (function () {
     Klassische.prototype.getPropMap = function () {
         return this._map;
     };
+    Klassische.ANY = 'Any';
+    Klassische.OBJECT = 'Object';
     return Klassische;
 }());
 exports.Klassische = Klassische;

@@ -4,6 +4,8 @@ export declare class Klassische {
      * PRIVATE UNMUTABLE CONSTANTS
      */
     private readonly UTF8;
+    static ANY: string;
+    static OBJECT: string;
     /**
      * PRIVATE MEMBERS
      * _jsonClass - Holds the parsed JSON object

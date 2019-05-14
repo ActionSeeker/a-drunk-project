@@ -10,12 +10,17 @@ const DATA_DIR = path.join(__dirname, path.sep, 'data');
 const VALID_JSON_FILEPATH = path.join(DATA_DIR, path.sep, 'valid_json_file.json');
 const INVALID_JSON_FILEPATH = path.join(DATA_DIR, path.sep, 'invalid_json_file.json');
 
+let fsGenerated = false;
+
 describe('Klassiche parsing tests', () => {
     before((done) => {
-        if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR);
-        // Create two test files
-        fs.writeFileSync(VALID_JSON_FILEPATH, JSON.stringify({ "testData": "Hallo" }), 'utf-8');
-        fs.writeFileSync(INVALID_JSON_FILEPATH, "Lorum Ipsum not parseable");
+        if (!fs.existsSync(DATA_DIR)) {
+            fsGenerated = true;
+            fs.mkdirSync(DATA_DIR);
+            // Create two test files
+            fs.writeFileSync(VALID_JSON_FILEPATH, JSON.stringify({ "testData": "Hallo" }), 'utf-8');
+            fs.writeFileSync(INVALID_JSON_FILEPATH, "Lorum Ipsum not parseable");
+        }
         done();
     });
 
@@ -45,7 +50,7 @@ describe('Klassiche parsing tests', () => {
 
     after((done) => {
         // Cleanup
-        rimraf.sync(DATA_DIR);
+        if (fsGenerated) rimraf.sync(DATA_DIR);
         done();
     })
 });

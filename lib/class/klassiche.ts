@@ -6,6 +6,8 @@ export class Klassische {
      * PRIVATE UNMUTABLE CONSTANTS
      */
     private readonly UTF8 = 'utf-8';
+    public static ANY: string = 'Any';
+    public static OBJECT: string = 'Object';
 
     /**
      * PRIVATE MEMBERS
