@@ -11,7 +11,7 @@ var Queue = /** @class */ (function () {
             var enqueued = this_1._queue.shift();
             if (enqueued) {
                 // For the sake of the TypeScript
-                var parsed_1 = enqueued.jsonClass;
+                var parsed_1 = enqueued.getParsedEntity();
                 Object.keys(parsed_1).forEach(function (key) {
                     if (parsed_1.hasOwnProperty(key) && _this.isNotNull(parsed_1[key])) {
                         var value = parsed_1[key];
