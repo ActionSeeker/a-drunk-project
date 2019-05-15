@@ -28,7 +28,13 @@ describe('A basic, mixed JSON parsing', () => {
             // Third level assertion
             const grandChild = firstChild.getChildAtIndex(0);
             expect(grandChild.getAllChildren().length).to.equals(2);
-            expect(grandChild.getParsedEntity().size).to.equals(6);
+            expect(grandChild.getPropMap().size).to.equals(6);
+
+            // Fourth level assertion
+            expect(grandChild.getChildAtIndex(0).getAllChildren().length).to.equals(1);
+            expect(grandChild.getChildAtIndex(0).getPropMap().size).to.equals(1);
+            expect(grandChild.getChildAtIndex(1).getAllChildren().length).to.equals(0);
+            expect(grandChild.getChildAtIndex(1).getPropMap().size).to.equals(2);
         });
     });
 });

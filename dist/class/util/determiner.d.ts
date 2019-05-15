@@ -9,6 +9,10 @@ export declare class Determiner {
     static readonly MIXED: string;
     static readonly NULL: string;
     private _types;
+    /**
+     * Method that returns the kind of elements the array is comprised of
+     * @param list List of elements to determine breed of
+     */
     getBreed(list: any[]): string;
     getBreedType(): String;
 }

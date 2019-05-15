@@ -3,13 +3,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Determiner = /** @class */ (function () {
     function Determiner() {
     }
+    /**
+     * Method that returns the kind of elements the array is comprised of
+     * @param list List of elements to determine breed of
+     */
     Determiner.prototype.getBreed = function (list) {
         var _this = this;
         this._types = new Set();
+        // Clear all the null / undefined values
         var alive = list.filter(function (value) { return value != null && value != void 0; });
         if (alive.length === 0)
             return Determiner.NULL;
-        alive.reduce(function (prev, curr) { return curr ? _this._types.add(curr.constructor.name) : void 0; });
+        alive.forEach(function (element) { return _this._types.add(element.constructor.name); });
         if (this._types.size === 1)
             return Determiner.PURE;
         return Determiner.MIXED;

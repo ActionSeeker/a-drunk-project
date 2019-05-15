@@ -12,11 +12,16 @@ export class Determiner {
 
     private _types!: Set<String>;
 
+    /**
+     * Method that returns the kind of elements the array is comprised of
+     * @param list List of elements to determine breed of
+     */
     public getBreed(list: any[]): string {
         this._types = new Set<string>();
-        let alive = list.filter(value => value != null && value != void 0);
+        // Clear all the null / undefined values
+        const alive = list.filter(value => value != null && value != void 0);
         if (alive.length === 0) return Determiner.NULL;
-        alive.reduce((prev: any, curr: any) => curr ? this._types.add(curr.constructor.name) : void 0);
+        alive.forEach(element => this._types.add(element.constructor.name));
         if (this._types.size === 1) return Determiner.PURE;
         return Determiner.MIXED;
     }
