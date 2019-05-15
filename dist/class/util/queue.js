@@ -20,7 +20,7 @@ var Queue = /** @class */ (function () {
                         if (value.constructor.name === 'Array') {
                             // It is an array of elements
                             // Some logic to extract a class from all the elements of the array
-                            var breed = _this._determiner.getBreed([value]);
+                            var breed = _this._determiner.getBreed(value);
                             if (breed === 'NULL') { /** Sehr Gut. Kein Problem ! */ }
                             else if (breed === 'PURE') {
                                 // For pure, primtive types
@@ -37,7 +37,8 @@ var Queue = /** @class */ (function () {
                                 }
                             }
                             else if (breed === 'MIXED') {
-                                _this.registerChild(value, enqueued, key, true);
+                                enqueued.addToPropMap(key, klassiche_1.Klassische.ANY + "[]");
+                                // this.registerChild(value, enqueued, key, true);
                             }
                         }
                         else if (value.constructor.name === 'Object') {

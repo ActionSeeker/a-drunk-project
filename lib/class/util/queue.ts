@@ -18,7 +18,7 @@ export class Queue {
                         if (value.constructor.name === 'Array') {
                             // It is an array of elements
                             // Some logic to extract a class from all the elements of the array
-                            const breed = this._determiner.getBreed([value]);
+                            const breed = this._determiner.getBreed(value);
                             if (breed === 'NULL') {/** Sehr Gut. Kein Problem ! */ }
                             else if (breed === 'PURE') {
                                 // For pure, primtive types
@@ -33,7 +33,8 @@ export class Queue {
                                     enqueued.addToPropMap(key, `${pureBreedType}[]`);
                                 }
                             } else if (breed === 'MIXED') {
-                                this.registerChild(value, enqueued, key, true);
+                                enqueued.addToPropMap(key, `${Klassische.ANY}[]`);
+                                // this.registerChild(value, enqueued, key, true);
                             }
                         } else if (value.constructor.name === 'Object') {
                             // Another JSON object

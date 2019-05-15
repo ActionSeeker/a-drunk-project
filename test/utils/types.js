@@ -3,5 +3,6 @@ module.exports.TYPES = {
     NUMBER: 'Number',
     BOOLEAN: 'Boolean',
     OBJECT: 'Object',
-    CLASSIC: 'Klassische'
+    CLASSIC: 'Klassische',
+    ANY: 'Any'
 };
