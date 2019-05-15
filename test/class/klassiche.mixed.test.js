@@ -35,6 +35,8 @@ describe('A basic, mixed JSON parsing', () => {
             expect(grandChild.getChildAtIndex(0).getPropMap().size).to.equals(1);
             expect(grandChild.getChildAtIndex(1).getAllChildren().length).to.equals(0);
             expect(grandChild.getChildAtIndex(1).getPropMap().size).to.equals(2);
+            expect(grandChild.getChildAtIndex(1).getPropMap().get('id')).to.equals(TYPES.STRING);
+            expect(grandChild.getChildAtIndex(1).getPropMap().get('type')).to.equals(TYPES.STRING);
         });
     });
 });
