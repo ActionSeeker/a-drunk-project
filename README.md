@@ -1,4 +1,4 @@
-# Klaßische
+# Klassisch
 
 Ganz ehrlich habe ich keine Ahnung warum ich dieses Repo erstellt habe 🤷🏻‍♂️
 
