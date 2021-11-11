@@ -1,33 +1,11 @@
 {
-  "name": "klassiche",
-  "version": "1.0.0",
-  "description": "A tool to convert JSON object into ES6 classes. These ES6 classes pretty much follow the getter / setter convention of other programming languages",
+  "name": "a-drunk-project",
+  "version": "0.0.1",
+  "description": "A tool that should convert a given JSON Object to ES6 class with getter, setter conventions.",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "test": "mocha --reporter spec test/**/*.test.js",
-    "dev": "npm run build && npm run test",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/**/*.test.js -- -R spec"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ActionSeeker/Klassy.git"
-  },
-  "keywords": [
-    "json",
-    "es6",
-    "javascript",
-    "converter",
-    "nodejs",
-    "classes"
-  ],
+  "repository": "https://github.com/ActionSeeker/a-drunk-project",
   "author": "Luv Karakoti (https://github.com/ActionSeeker/)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ActionSeeker/Klassy/issues"
-  },
-  "homepage": "https://github.com/ActionSeeker/Klassy#readme",
+  "license": "MIT",
   "dependencies": {
     "ansi-regex": "^5.0.1",
     "glob-parent": "^5.1.2",
