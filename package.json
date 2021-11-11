@@ -29,8 +29,11 @@
   },
   "homepage": "https://github.com/ActionSeeker/Klassy#readme",
   "dependencies": {
+    "ansi-regex": "^5.0.1",
+    "glob-parent": "^5.1.2",
     "js-beautify": "^1.7.4",
     "nodemon": "^1.12.5",
+    "set-value": "^4.0.1",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
