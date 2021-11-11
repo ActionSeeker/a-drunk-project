@@ -1,0 +1,4 @@
+a-drunk-project
+=================
+
+Ehrlich gesagt bliebt es mir noch ein Geheimnis, wieso ich mit diesem Projekt angefangen habe. Vielleicht war es schon vor 3 Jahren, als ich noch jünger, nicht bewusst der Wirklichkeit des Lebens, die mir später begegnet ist, war, habe ich dieses Projekt erstellet. Das Bedürfnis dieses Projekt stammt aus... aus einem unbekannten Grund, und so nennt sich das Projekt jetzt als `a-drunk-projekt`. Ich habe hier fleißig zwei oder mehrere Files erstellt aber bin mir nicht ganz sicher, was sie machen. Sobald ich mit der Forschung fertig bin, würde ich diesen Bereich natürlich aufräumen und etwas noch Selbs erklärender schreiben.
